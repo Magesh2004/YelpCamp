@@ -78,10 +78,6 @@ app.all('*',(req,res,next)=>{
     next(new ExpressError('Page Not Found',404))
 })
 
-// app.use((err, req, res, next) => {
-//     res.send(err.name);
-// })
-
 app.use((err, req, res, next) => {
     const { statusCode = 500, message = "Something went wrong" } = err;
     if(!err.message)err.message = "Something went wrong"
